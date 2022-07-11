@@ -5,7 +5,6 @@ package com.mycompany.exercicio04;
 //também aleatório
 //• Contar o tempo até que o usuário digite o número pedido e mostrar esse
 //tempo.
-
 import java.util.Random;
 import javax.swing.JOptionPane;
 
