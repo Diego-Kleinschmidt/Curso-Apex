@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+ 
+
+
+        // Ecento quando clicadono botão
+        function acao(){
+
+            // obter as duas notas
+            let nota1 = parseInt(document.getElementById("nota1").value)
+            let nota2 = parseInt(document.getElementById("nota2").value)
+
+            // obter a media
+            let media = calculo(nota1, nota2)
+
+            // obter a situação
+            let situacao = verificarSituacao(media)
+
+            // Mensagem
+            alert("Aluno está " + situacao + " com a média " + media)
+        }
+
+        // Retornar a média
+        function calculo(nota1, nota2){
+            return (nota1 + nota2) / 2
+        }
+
+        // Retorna a situação
+        function verificarSituacao(media){
+            return media >= 7 ? "aprovado" : "reprovado"
+        }
+
+    </script>
+
+</head>
+<body>
+    <!-- Formulário -->
+    <form>
+        <input type="text" placeholder="Primeira nota" id="nota1">
+        <input type="text" placeholder="Segunda nota" id="nota2">
+        <input type="button" value="Verificar" onclick="acao()">
+    </form>
+
+</body>
+</html>

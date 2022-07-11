@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*O usuário informa cinco números, em seguida exiba na ordem contrário que foram
+informados.*/
+
+
+        var numeros = [];
+        var entrada = "";
+        for(var indice = 1; indice <= 5; indice++){
+            entrada = prompt("escreva o " + indice + " numero");
+            numeros.push (entrada);
+        }
+        for(var index = numeros.length-1; index >= 0; index--){
+            document.write(numeros[index] + "  ");
+        }
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

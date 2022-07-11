@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/* Implemente uma matriz 3x2, na primeira coluna serão armazenados nomes de
+cursos, já na segunda coluna os valores. Ao término liste os dados informados para
+armazenar na matriz. */
+
+
+        let lista = [[],[],[]];
+
+        for(let linha = 0; linha < 3; linha++){
+            for(let coluna = 0; coluna < 2; coluna++){
+                if (coluna == 0){
+                    lista[linha][coluna] = prompt("Qual o nome do curso?");
+                }else {
+                    lista[linha][coluna] = prompt("Qual o valor do curso?");
+                }
+            }
+        }
+        for (let linha = 0; linha < lista.length; linha++) {
+            for (let coluna = 0; coluna < lista[linha].length; coluna++) {
+                if (coluna == 1){
+                    document.write("R$" + lista[linha][coluna] + "  ");
+                }else{
+                    document.write(lista[linha][coluna] + "  ");
+                }
+            }
+        document.write("<br>");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

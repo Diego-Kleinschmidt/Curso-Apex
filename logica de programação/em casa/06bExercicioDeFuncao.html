@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*Criar uma agenda para manipular os dados: nome, e-mail, idade e cidade,
+essa agenda terá opções para cadastrar, alterar, selecionar e excluir
+contatos. Cada ação da agenda deverá estar em uma função.*/
+        
+        let agenda = [] 
+
+        function cadastrar(){
+            agenda.push({nome:nome(), email:email(), idade: idade(), cidade: cidade()})
+        }
+        function alterar(){
+            let nomeAlterado = prompt("qual o nome você quer alterar?")
+            for (let index = 0; index < agenda.length; index++) {
+                if(nomeAlterado ==  agenda[index].nome ){
+                    agenda[index].nome = nome()
+                }
+            }
+        }
+        function selecionar(){
+            for (todos of agenda) {
+                alert(todos.nome + " " + todos.email + " " + todos.idade + " " + todos.cidade + "<br>")
+            }
+        }
+        function excluir(){
+            for(let index = 0; index < agenda.length; index++){
+                if(nome() == agenda[index].nome){
+                    agenda.splice(index, 1)
+                }
+            }
+        }
+        function nome(){
+            return document.getElementById("nome").value
+        }   
+        function email(){
+            return document.getElementById("email").value
+        }
+        function idade(){
+            return parseInt(document.getElementById("idade").value)
+        }   
+        function cidade(){
+            return document.getElementById("cidade").value
+        }  
+
+
+    </script>
+
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Nome" id="nome">
+        <input type="text" placeholder="e-mail" id="email">
+        <input type="text" placeholder="Idade" id="idade">
+        <input type="text" placeholder="Cidade" id="cidade">
+        <input type="button" value="Cadastrar" onclick="cadastrar()">
+        <input type="button" value="Alterar" onclick="alterar()">
+        <input type="button" value="Selecionar" onclick="selecionar()">
+        <input type="button" value="Excluir" onclick="excluir()">
+    </form>
+    <script>
+        document.write("<br>" + "Se quisere excluir colocar só o nome")
+        document.write("<br>" + "Se quisere Alterar digite o novo nome")
+    </script>
+</body>
+</html>

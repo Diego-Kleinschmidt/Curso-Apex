@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*O usuário deverá informar a largura de cada lado de um triângulo, peça as
+três larguras (direito, inferior e esquerdo) e verifique o tipo de triângulo. Os
+tipos e triângulos são:
+
+Isósceles: Dois lados iguais e um diferente
+Escaleno: Três lados diferentes
+Equilátero: Três lados iguais */
+
+        var direito = window.prompt("informe a largura do lado direito ");
+        var inferior = window.prompt("Informe a largura inferior ");
+        var esquerdo = window.prompt("Informe a largura do lado esquerdo ");
+        
+        if (direito == esquerdo && esquerdo != inferior || direito == inferior && inferior != esquerdo || esquerdo == inferior && inferior != direito){
+            document.write("é um triângulo isósceles")
+        }else if (direito != esquerdo && esquerdo != inferior){
+            document.write("É um triangumo escaleno ")
+        }else {
+            document.write("É um triangulo equilatero ")
+        }
+            
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

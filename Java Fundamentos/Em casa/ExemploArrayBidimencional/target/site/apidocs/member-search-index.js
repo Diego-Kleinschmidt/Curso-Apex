@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.mycompany.exemploarraybidimencional","c":"ExemploArrayBidimencional","l":"ExemploArrayBidimencional()","u":"%3Cinit%3E()"},{"p":"com.mycompany.exemploarraybidimencional","c":"ExemploArrayBidimencional","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();

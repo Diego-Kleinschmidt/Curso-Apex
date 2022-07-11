@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    /*Implemente um sistema para cadastrar produtos contendo os seguintes
+dados: nome do produto, marca, valor, quantidade em estoque. As
+funcionalidades que esse sistema deverá ter são:
+● Cadastrar produtos
+● Selecionar produtos
+● Alterar produtos
+● Excluir produtos
+● Pesquisar produtos através do nome
+Algumas regras para esse sistema:
+● Não pode haver produtos com o mesmo nome
+● Não poderão ser cadastrados com valor zero ou negativos
+● Quando cadastrado um produto, a quantidade em estoque precisa ser de pelo menos um.*/
+      
+        let produto = [ {nome:"milho", marca:"lar", valor:5, quantidade:122},
+                        {nome:"leite", marca:"tirol", valor:3.50, quantidade:254} ];
+        function cadastrar(){
+            let logico = nomeRepetido();
+            if(valor() > 0 && logico ){
+                produto.push({nome:nome(), marca:marca(), valor:valor(), quantidade:quantidade()});
+            }else{
+                if(valor() <= 0 || valor() == ""){
+                    alert("O valor nao pode ser menor ou igual a 0")
+                }
+                if(!logico){
+                    alert("Esse produto ja foi cadastrado")
+                }
+            }
+        }    
+        function selecionar(){
+            for (todos of produto) {
+                alert(todos.nome + " " + todos.marca + " " + todos.valor + " " + todos.quantidade)
+            }
+        }
+        function alterar(){
+            let nomeAlterar = prompt("qual o nome você quer alterar?")
+            for (let index = 0; index < produto.length; index++) {
+                if(nomeAlterar ==  produto[index].nome ){
+                    produto[index].nome = nome()
+                }
+            }
+        }
+        function excluir(){
+            for(let index = 0; index < produto.length; index++){
+                if(nome() == produto[index].nome){
+                    produto.splice(index, 1);
+                }
+            }
+        }
+        function pesquisar(){
+            for(let index = 0; index < produto.length; index++){
+                if(nome() == produto[index].nome){
+                    alert(produto[index].nome + " " + produto[index].marca + " " + produto[index].valor + " " + produto[index].quantidade)
+                }
+            }
+        }
+        function nome(){
+            return document.getElementById("nome").value;
+        }
+        function marca(){
+            return document.getElementById("marca").value;
+        }
+        function valor(){
+            return document.getElementById("valor").value;
+        }
+        function quantidade(){
+            return document.getElementById("quantidade").value;
+        }
+        function nomeRepetido(){
+            for (let index = 0; index < produto.length; index++) {
+                if(nome() ==  produto[index].nome ){
+                    return false;
+                }else{
+                    return true;
+                }    
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Nome do produto" id="nome">
+        <input type="text" placeholder="Marca" id="marca">
+        <input type="text" placeholder="Valor" id="valor">
+        <input type="text" placeholder="Quantidade" id="quantidade">
+        <input type="button" value="Cadastrar" onclick="cadastrar()">
+        <input type="button" value="Selecionar" onclick="selecionar()">
+        <input type="button" value="Alterar" onclick="alterar()">
+        <input type="button" value="Excluir" onclick="excluir()">
+        <input type="button" value="Pesquisar" onclick="pesquisar()">
+    </form>
+    <script>
+        document.write("<br>" + "Se quisere excluir colocar só o nome");
+        document.write("<br>" + "Se quisere Alterar digite o novo nome");
+        document.write("<br>" + "Se quisere pesquisar digite o nome");
+    </script>
+</body>
+</html>

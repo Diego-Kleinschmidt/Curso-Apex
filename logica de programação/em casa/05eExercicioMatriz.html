@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/* Elabore um caixa de mercado. Haverá uma lista de produtos que você irá criar, cada
+ produto terá um nome e um valor. Inicialmente o caixa poderá selecionar um código
+ que representa um produto e a quantidade comprada pelo cliente, enquanto não
+ digitar o número zero, essa ação será repetida inúmeras vezes. Quando digitado o
+ número zero exiba cada produto comprado, além de sua quantidade, valor unitário,
+ valor total daquele produto (quantidade * valor unitário) e por fim o total da compra.    */
+
+        let entrada;
+        let somaTotal = 0;
+        let quantDoProduto;
+        let pedido = [];
+        let lista = [
+            { },
+            {codigo: 1, produto: "macarrao", preco: 4.99},
+            {codigo: 2, produto: "milho", preco: 2.39},
+            {codigo: 3, produto: "alface", preco: 2.99},
+            {codigo: 4, produto: "tomate", preco: 8.99},
+            {codigo: 5, produto: "bolacha", preco: 3.59},
+            {codigo: 6, produto: "fermento", preco: 4.29},
+            {codigo: 7, produto: "trigo", preco: 13.99},
+            {codigo: 8, produto: "arroz", preco: 15.99},
+            {codigo: 9, produto: "feijão", preco: 7.99}
+        ];
+        do {
+            entrada = parseInt(prompt("qual o codigo do produto"));
+            if(entrada == 0){
+                break
+            }else if(entrada > lista.length){
+                    alert("codigo invalido")
+            }else {
+                quantDoProduto = parseInt(prompt("qual a quantidade ?"));
+                pedido.push({codigo:entrada, quantidade:quantDoProduto})
+            }
+        } while (entrada != 0);
+
+        for (compra of pedido) {
+                    document.write("Item:" + lista[compra.codigo].produto +"  Quantidade:" + compra.quantidade + "  Valor unitario R$" + lista[compra.codigo].preco + "  Total do item R$" + (compra.quantidade * lista[compra.codigo].preco ).toFixed(2) + "<br>" ) 
+                }
+
+        for (compra of pedido) {
+            somaTotal = somaTotal + (compra.quantidade * lista[compra.codigo].preco )
+        }
+        document.write("O valor total da compra é R$" + somaTotal.toFixed(2));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

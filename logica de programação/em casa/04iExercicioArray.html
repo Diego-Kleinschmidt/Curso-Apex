@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*Desenvolva um sistema para gerenciar cursos, as funcionalidades pedidas são:
+1) Cadastrar curso - Pede o nome do novo curso
+2) Selecionar cursos - Exibe todos os cursos
+3) Remover curso - Pede o nome do curso e realiza a exclusão
+4) Sair do sistema - Finaliza o laço */
+
+
+        var cursos = ["java", "PHP"];
+        var entrada = 0;
+        var novoCurso;
+        var removeCurso;
+        do {
+            entrada = parseInt(prompt("o que você deseja fazer ?"));
+            
+            if (entrada == 1){
+                novoCurso = prompt("Qual o nome do novo curso?")
+                cursos.push(novoCurso);
+                
+            }else if (entrada == 2){
+                for(var index = 0; index < cursos.length; index++){
+                    alert(cursos[index] + " - ");
+                }
+            }else if (entrada == 3){
+                removeCurso = prompt("Qual curso vc quer excluir?")
+                for(let index = 0; index < cursos.length; index++){
+                    if ( cursos[index] == removeCurso){
+                        cursos.splice(index, 1);
+                    }
+                }
+            }
+        } while (entrada != 4);
+
+        document.write(cursos + " , ");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

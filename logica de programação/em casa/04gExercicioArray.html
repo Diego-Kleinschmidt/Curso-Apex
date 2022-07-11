@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script>
+/*Haverá um cardápio contendo dez itens (você define o nome e o valor de cada item),
+cada item terá um código de 1 a 10, além do número 11 que finaliza o sistema.
+Enquanto não for digitado o número 11 será contabilizado em uma lista, quando
+digitado o número 11 exiba os produtos adquiridos e o total dessa compra.*/
+
+
+        var lista = [];
+        var entrada = null
+        var produtos = ["pão", "batata", "cenoura", "tomate", "pimentao", "alface", "chuchu", "macarrao", "aipim", "frango"];
+        var preços = [8, 4, 6, 7, 12, 2, 3, 4, 9, 13];
+        var soma = 0
+        do {
+            entrada = parseInt(prompt("qual o codigo do produto? ou digite 11 para sair"));
+            if(entrada >= 0 && entrada < 10){
+                lista.push(entrada);
+            }else if (entrada > 9 && entrada != 11 || entrada < 0  ){
+                alert("codigo do produto invalido");
+            }
+        }while(entrada != "11"); 
+
+        for(var indice = 0; indice < lista.length; indice++){
+            document.write(produtos[lista[indice]] + " - ");
+            soma = soma + preços[lista[indice]];
+        }
+        document.write("<br>" + "A soma dos produtos são " + soma);
+      
+
+
+      
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

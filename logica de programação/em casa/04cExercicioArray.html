@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*Crie um laço que peça nomes, poderão ser armazenados vários nomes, não há uma
+quantidade mínima nem máxima. Quando informada a palavra sair, exiba todos os
+nomes e informe a quantidade de nomes cadastrados.*/
+
+
+        var nomes = [];
+        var entrada = ""
+        do {
+            entrada = prompt("escreva um nome ou sair :");
+            if (entrada != "sair"){
+            nomes.push (entrada);
+            }
+        } while (entrada != "sair");
+
+        for (var index = 0; index < nomes.length; index++) {
+           document.write(nomes[index] + "<br>");
+        }
+        document.write("foram digitados " + nomes.length + " nomes");
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

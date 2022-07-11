@@ -1,0 +1,45 @@
+@options
+@packages
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'18'
+-sourcepath
+'C:/Users/diekl/Documents/Curso Apex/NetBeans/Java Fundamentos/Em casa/ExemploArrayBidimencional/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/diekl/Documents/Curso Apex/NetBeans/Java Fundamentos/Em casa/ExemploArrayBidimencional/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ExemploArrayBidimencional 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'ExemploArrayBidimencional 1.0-SNAPSHOT API'
+com.mycompany.exemploarraybidimencional
+'C:/Users/diekl/Documents/Curso Apex/NetBeans/Java Fundamentos/Em casa/ExemploArrayBidimencional/src/main/java/com/mycompany/exemploarraybidimencional/ExemploArrayBidimencional.java'
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\src\main\java = 1657059073534
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\allclasses-index.html = 1657066901753
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\allpackages-index.html = 1657066901758
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\copy.svg = 1657066901825
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\element-list = 1657066901664
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\help-doc.html = 1657066901816
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\index-all.html = 1657066901789
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\index.html = 1657066901810
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\jquery-ui.overrides.css = 1657066901886
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\member-search-index.js = 1657066901769
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\module-search-index.js = 1657066901761
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\overview-tree.html = 1657066901727
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\package-search-index.js = 1657066901764
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\script.js = 1657066901823
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\search.js = 1657066901828
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\stylesheet.css = 1657066901821
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\tag-search-index.js = 1657066901771
+C:\Users\diekl\Documents\Curso Apex\NetBeans\Java Fundamentos\Em casa\ExemploArrayBidimencional\target\site\apidocs\type-search-index.js = 1657066901766

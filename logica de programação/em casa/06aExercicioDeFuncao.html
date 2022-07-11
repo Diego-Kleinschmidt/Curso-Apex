@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+     /*Crie um formulário, onde o usuário irá informar dois valores e uma operação
+    de soma, subtração, multiplicação ou divisão.
+    Haverá as seguintes funções:
+    1) Ação - Responsável por obter os dados informados, selecionar um cálculo e exibir
+    2) Soma - Haverá dois parâmetros que retornará a soma dos valores
+    3) Subtração - Haverá dois parâmetros que retornará a subtração dos valores
+    4) Multiplicação - Haverá dois parâmetros que retornará a multiplicação dos valores
+    5) Divisão - Haverá dois parâmetros que retornará a divisão dos valores*/
+
+        function calcular(){
+            let numero1 = parseInt(document.getElementById("numero1").value)
+            let numero2 = parseInt(document.getElementById("numero2").value)
+            let operador = document.getElementById("operador").value
+            let resultado 
+            if(operador == "+"){
+               resultado =  soma(numero1 ,numero2)
+            }else if (operador == "-"){
+                resultado = subtracao(numero1, numero2)
+            }else if (operador == "*"){
+                resultado = multiplicacao(numero1, numero2)
+            }else if (operador == "/"){
+                resultado = divisao(numero1, numero2)
+            }else{
+                alert("operador invalido")
+            }
+            alert("o resultado é " + resultado)
+        }
+     
+        function soma(numero1 ,numero2){
+            return (numero1 + numero2)
+        }
+        function subtracao(numero1 ,numero2){
+            return (numero1 - numero2)
+        }
+        function multiplicacao(numero1 ,numero2){
+            return (numero1 * numero2)
+        }
+        function divisao(numero1 ,numero2){
+            return (numero1 / numero2)
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Primeiro numero" id="numero1">
+        <input type="text" placeholder="Segundo numero" id="numero2">
+        <input type="text" placeholder="informe a operação" id="operador">
+        <input type="button" value="Caucular" onclick="calcular()">
+    </form>
+    
+</body>
+</html>

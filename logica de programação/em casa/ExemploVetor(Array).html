@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //cria um vetor [com os nomes]
+        var nomes = ["Larissa", "Marcelo", "Natália", "Orlando", "Paloma"];
+        document.write(nomes + "<br>");
+        //Adiciona um nome
+        nomes.push("Rebeca");
+        //Altera Paloma para Patrícia
+        nomes[4] = "Patrícia";
+        //removendo Natália
+        nomes.splice(2, 1);
+
+        for(var indice = 0; indice < nomes.length; indice++){
+            document.write(indice + " " + nomes[indice] + "<br>");
+        }
+
+        document.write("Há " + nomes.length + " nomes no vetor");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

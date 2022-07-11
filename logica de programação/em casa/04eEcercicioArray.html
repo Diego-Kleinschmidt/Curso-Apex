@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/* Faça com que sejam pedidos e armazenados cinco números. Informe quantos
+números dez foram informados pelo usuário.*/
+
+        var numeros = [];
+        var entrada = "";
+        var n10 = 0;
+        for (var indice = 1; indice <= 5; indice++){
+            entrada = prompt("Digite o " + indice + "º numero ");
+            if (entrada == 10){
+                n10++
+            }
+            numeros.push(entrada);
+        }
+        document.write("foi informado " + n10 + " numero(s) 10");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

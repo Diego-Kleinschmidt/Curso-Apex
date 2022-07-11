@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*Crie um pequeno sistema de votação, exiba em um prompt() as opções:
+1 - Alessandra
+2 - Caio
+3 - Geraldo
+4 - Talita
+5 - Sair
+Enquanto não for digitado o número 5 o laço deverá realizar a ação de
+prompt() para pedir o voto e contabilizar para o candidato. Quando
+informado o número 5 retorne a quantidade de votos que cada candidato
+obteve.*/
+
+
+        var Alessandra = 0
+        var Caio = 0
+        var Geraldo = 0
+        var Talita = 0
+        var votoInvalido = 0
+        
+        do {
+            var voto = prompt("Digite o numero de quem você vai votar  1-Alessandra  2-Caio 3-Geraldo  4-Talita  5-Sair" )
+            switch (voto) {
+                case "1":
+                    Alessandra++
+                    break;
+            
+                    case "2":
+                    Caio++
+                    break;
+
+                    case "3":
+                    Geraldo++
+                    break;
+
+                    case "4":
+                    Talita++
+                    break;
+
+                    default:
+                    if (voto != "5" ){
+                        votoInvalido++
+                    }
+                    break
+            }
+            
+        } while (voto != "5");
+        document.write("Alessandra recebeu " + Alessandra + " votos" + "<br>")
+        document.write("Caio recebeu " + Caio + " votos" + "<br>")
+        document.write("Geraldo recebeu " + Geraldo + " votos" + "<br>")
+        document.write("Talita recebeu " + Talita + " votos" + "<br>")
+        document.write("Teve " + votoInvalido + " votos invalidos" + "<br>")
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

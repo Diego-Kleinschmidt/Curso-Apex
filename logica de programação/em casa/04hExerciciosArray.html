@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*Crie um vetor que peça cinco números, em seguida exiba os cinco números
+informados e mostre qual é o menor número e o maior número.*/
+
+        var numeros = [];
+        var entrada ;
+        var maior = 0;
+        var menor = 0;
+
+        for(var index = 1; index <= 5; index++){
+            entrada = parseInt(prompt("Digite o " + index + "º numero"));
+            numeros.push(entrada);
+        }
+        for(var index = 0; index < numeros.length; index++ ){
+            if (index == 0){
+                maior = numeros[index];
+                menor = numeros[index];
+            }else {
+                if (numeros[index] > maior){
+                    maior = numeros[index];
+                }
+                if (numeros[index] < menor){
+                    menor = numeros[index]
+                }
+            }
+        }
+        document.write("o maior numero digitado foi " + maior + "<br>");
+        document.write("o menor numero digitado foi " + menor);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

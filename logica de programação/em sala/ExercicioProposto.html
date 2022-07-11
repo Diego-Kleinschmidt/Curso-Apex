@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let nomeMenor 
+        let nomeMaior 
+        let maior 
+        let menor 
+        let lista =[
+        ["Java", 10],
+        ["Python", 15],
+        ["PHP", 5],
+        ["Ingles", 13],
+        ["Html", 7]
+    ]
+
+    for (let index = 0; index < lista.length; index++){
+        if(index == 0){
+            maior = lista[index][1]
+            nomeMaior = lista[index][0]
+            menor = lista[index][1]
+            nomeMenor = lista[index][0]
+        }
+        if(lista[index][1] > maior){
+            maior = lista[index][1]
+            nomeMaior = lista[index][0]
+        }
+        if(lista[index][1] < menor){
+            menor = lista[index][1]
+            nomeMenor = lista[index][0]
+        }
+    }
+
+    document.write("o curso com mais alunos é " + nomeMaior + " com " + maior + " alunos" + "<br>")
+    document.write("o curso com menos alunos é " + nomeMenor + " com " + menor + " alunos" + "<br>")
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

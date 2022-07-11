@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*O usuário informa uma temperatura, em seguida poderá selecionar o tipo de
+conversão (Celsius e Fahrenheit).*/
+
+        var temperatura = parseInt(window.prompt("qual a temperatura ?"))
+        var conversao = window.prompt("converter para Celsius ou Fahrenheit ? ")
+        
+        switch (conversao){
+            case "Celsius":
+                document.write("A temperatura em Celsius é " + ((temperatura - 32) / 1.8) + " ºC")
+            break
+
+            case "Fahrenheit":
+                document.write("A temperatura em Fahrenheit é " + (1.8 * temperatura + 32) + " ºF")
+            break
+            
+            default:
+                document.write("conversão invalida ")
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

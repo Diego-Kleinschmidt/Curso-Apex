@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*Crie um sistema para uma agenda de contatos, esse sistema terá um menu com as
+seguintes funcionalidades:
+1) Cadastrar contato
+2) Selecionar contatos
+3) Alterar contato
+4) Remover contato
+5) Sair do sistema*/
+
+        let entrada;
+        let agenda = [
+            {nome:"maria", tel: 5484685},
+            {nome:"joao", tel: 65824868}
+        ]
+       
+        
+        do{
+            entrada = prompt("escolha uma opção");
+            if(entrada == "1"){ //Cadastrar contato
+                let novoNome = prompt("qual o nome do novo cliente");
+                let novoNumero = prompt("qual o telefone ");
+                agenda.push({nome: novoNome, tel: novoNumero});
+            }else if(entrada == "2"){ //Selecionar contatos
+                for (contato of agenda) {
+                    alert(contato.nome + "  " + contato.tel)
+                }
+            }else if(entrada == "3"){ //Alterar contato
+                let nomeAlterado = prompt("qual o nome que quer alterar")
+                let nomeSubistituto = prompt("qual o novo nome")
+                for (let index = 0; index < agenda.length; index++) {
+                    if(nomeAlterado ==  agenda[index].nome ){
+                        agenda[index].nome = nomeSubistituto
+                    }
+                }
+            }else if (entrada == "4"){ //Remover contato
+                let excluir = prompt("qual contato você que deletar?")
+                for(let index = 0; index < agenda.length; index++){
+                    if(excluir == agenda[index].nome){
+                        agenda.splice(index, 2)
+                    }
+                }
+            }
+        }while(entrada != "5");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

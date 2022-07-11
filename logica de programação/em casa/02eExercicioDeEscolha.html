@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*O usuário informa o horário atual no Brasil (apenas hora), em seguida
+informa um país. Retorne o horário daquele país se baseando pela hora
+informada. Cadastre ao menos três países diferentes.*/
+
+        var hora = parseInt(window.prompt("Informe a hora"));
+        var pais = window.prompt("Qual pais você que saber a hora Alemanha, Japão ou India ")
+
+        switch (pais){
+            case "Alemanha":
+                document.write("Na Alemanha são " + (hora + 4 ) + " Horas")
+            break
+
+            case "Japão":
+                document.write("No Japão são " + (hora + 12 ) + " Horas")
+            break
+
+            case "India":
+                document.write("Na India são " + (hora + 8 ) + " Horas")
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

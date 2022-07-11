@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*  Crie uma matriz 4x4 e peça para o usuário informar 16 números. Quando informados
+os 16 números exiba cada um deles, além da soma e a média dos valores */
+
+        let lista = [[],[],[],[]];
+        let soma = 0;
+        let cont = 0;
+        let entrada;
+
+        for(let linha = 0; linha < 4; linha++){
+            for(let coluna = 0; coluna < 4; coluna++){
+                entrada = parseFloat(prompt("Digite um numero "));
+                lista[linha][coluna] = entrada
+                soma = soma + entrada;
+            }
+        }
+
+        for(let linha = 0; linha < lista.length; linha++){
+            for(let coluna = 0; coluna < lista[linha].length; coluna++){
+                document.write(lista[linha][coluna] + "   ")    
+                cont++
+            }
+        document.write("<br>");
+        }
+
+        document.write("A soma de todos os numeros é " + soma + "<br>");
+        document.write("A media dos numeros é " + (soma / cont ));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*O usuário informa um número inicial e um número final, em seguida retorne a
+quantidade de pares e ímpares daquela cadeia de valores.
+Vamos supor que os números informados foram: 6 e 12, sendo assim serão 4
+pares (6, 8, 10 e 12) e 3 ímpares (7, 9 e 11).*/
+
+
+        var numeroInicio = parseInt(prompt("qual o numero inicial "));
+        var numeroFinal = parseInt(prompt("qual o numero final "));
+        var impar = 0
+        var par = 0
+
+        for (numeroInicio; numeroInicio <= numeroFinal ; numeroInicio++){
+            if (numeroInicio % 2 == 1 ){
+                impar++
+            }else {
+                par++
+            }
+        }
+      
+        document.write("tem " + par + " numeros pares" +"<br>");
+        document.write("tem " + impar + " numeros impares" +"<br>");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

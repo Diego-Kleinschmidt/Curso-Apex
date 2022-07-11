@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*Crie um conversor de moedas. Será informado o valor e as conversões:
+○ Real para Dólar
+○ Dólar para Real
+○ Real para Euro
+○ Euro para Real*/
+
+        var moeda = window.prompt("Em qual moeda esta Real, Dolar ou Euro ? ")
+        var valor = parseInt(window.prompt("Qual o valor para converter? "))
+        var conversao = window.prompt("Para qual moeda quer converter Real, Dolar ou Euro")
+
+        switch(conversao){
+            case "real":
+                 if (moeda == "dolar"){
+                    document.write("O valor em real é R$ " + valor * 4.88)
+                }else if (moeda == "euro"){
+                    document.write("O valor em real é R$ " + valor * 5.24)
+                }
+            break
+
+            case "dolar": 
+                if (moeda == "euro"){
+                    document.write("O valor em dolar é US$ " + valor * 1.07 )
+                }else if (moeda == "real"){
+                    document.write("O valor em dolar é US$ " + valor * 0.20)
+                }
+            break
+
+            case "euro":
+                if (moeda == "real"){
+                    document.write("O valor em euro é € " + valor * 0.19)
+                }else if (moeda == "dolar"){
+                    document.write("O valor em euro é € " + valor * 0.93)
+                }
+            break
+
+            default:
+            document.write("Moeda invalida")
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

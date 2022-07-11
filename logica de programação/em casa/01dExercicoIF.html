@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*Peça para o usuário informar três números, em seguida exiba o menor deles.*/
+
+
+        var numero1 = parseInt(window.prompt("Digite um numero "));
+        var numero2 = parseInt(window.prompt("digite mais um numro "));
+        var numero3 = parseInt(window.prompt("Digite mais um numro"));
+
+        if (numero1 < numero2 && numero1 < numero3){
+            document.write("o menor número que você digitou foi " + numero1)
+        }else if (numero2 < numero1 && numero2 < numero3){
+            document.write("o menor número que você digotou foi " + numero2)
+        }else{
+            document.write("o menor número que você digitou foi " + numero3)
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

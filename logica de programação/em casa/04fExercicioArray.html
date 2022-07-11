@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/* Peça sete números, em seguida exiba a soma desses valores, a média e quantos
+números são maiores ou iguais a média.*/
+
+        var numeros = [];
+        var entrada = 0;
+        var soma = 0;
+        var mairoIgualA10 = 0
+
+        for(var indice = 1; indice <= 7; indice++){
+            entrada = parseInt(prompt("Digite o " + indice + "º numero "));
+            if (entrada >= 10){
+                mairoIgualA10++;
+            }
+            numeros.push(entrada);
+        }
+        for(var indice = 0 ; indice < numeros.length; indice++){
+            soma = soma + numeros[indice];
+        }
+
+        document.write("A soma desses valores é " + soma + "<br>");
+        document.write("A Media desses valores é " + (soma / numeros.length) + "<br>");
+        document.write(mairoIgualA10 + " sao maior ou igual a 10 " + "<br>");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
