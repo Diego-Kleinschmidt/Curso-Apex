@@ -10,6 +10,7 @@ public class Exercicio06 {
 
     public static void main(String[] args) {
         String nomeCompleto = JOptionPane.showInputDialog("Qual seu nome ?");
+
         JOptionPane.showMessageDialog(null, "Seu nome abreviado é " + abreviaNome(nomeCompleto, ondeTemEspaço(nomeCompleto)));
     }
 
@@ -20,14 +21,15 @@ public class Exercicio06 {
                 abreviacao += nome.charAt(0) + ".";
             }
             if (i < espaco.length - 2) {
-                if (validaDuasLetras(i, espaco)) {
+                int j = i + 1;
+                if ((espaco[i] - espaco[j]) == -3) {
                     abreviacao += nome.charAt(espaco[i] + 1);
                     abreviacao += nome.charAt(espaco[i] + 2) + ".";
                 } else {
                     abreviacao += nome.charAt(espaco[i] + 1) + ".";
                 }
             } else {
-                if (validaDuasLetrasDoFinal(espaco, nome)) {
+                if (nome.length() - espaco.length - 1 == -3) {
                     abreviacao += nome.charAt(espaco[i] + 1);
                     abreviacao += nome.charAt(espaco[i] + 2) + ".";
                 } else {
@@ -35,27 +37,7 @@ public class Exercicio06 {
                 }
             }
         }
-
         return abreviacao;
-    }
-
-    public static boolean validaDuasLetrasDoFinal(Integer[] espaco, String nome) {
-        if (nome.length() - espaco.length - 1 == -3) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
-    public static boolean validaDuasLetras(int i, Integer[] espaco) {
-        int j = i + 1;
-        if ((espaco[i] - espaco[j]) == -3) {
-            return true;
-        } else {
-            return false;
-        }
-
     }
 
     public static Integer[] ondeTemEspaço(String nome) {
