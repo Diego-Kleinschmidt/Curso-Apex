@@ -8,7 +8,6 @@ public class Carro extends Veiculos{
     public int getNumDePortas() {
         return numDePortas;
     }
-// dar continuidade com as condiçoes de cada encapsulamento
     public void setNumDePortas(int numDePortas) {
         this.numDePortas = numDePortas;
     }

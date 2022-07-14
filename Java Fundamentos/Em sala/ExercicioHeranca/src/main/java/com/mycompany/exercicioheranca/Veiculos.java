@@ -15,11 +15,7 @@ public class Veiculos {
     }
 
     public void setPlaca(String placa) {
-        if (placa.length() == 7) {
-            this.placa = placa;
-        } else {
-            
-        }
+        this.placa = placa;
     }
 
     public String getChassi() {

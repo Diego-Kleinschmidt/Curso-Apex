@@ -19,13 +19,11 @@ public class ExemploList {
         listaDeNomes.add(new Pessoa("Marcelo", 44));
         String pessoaFormatada = "Nome    Idade\n";
         for (Pessoa p : listaDeNomes) {
-            pessoaFormatada += p.nome + "    " +  p.idade + "\n";
-            
+            pessoaFormatada += p.nome + "    " + p.idade + "\n";
+
         }
-        
-        
-        JOptionPane.showMessageDialog(null,pessoaFormatada);
-        
-        
+
+        JOptionPane.showMessageDialog(null, pessoaFormatada);
+
     }
 }
