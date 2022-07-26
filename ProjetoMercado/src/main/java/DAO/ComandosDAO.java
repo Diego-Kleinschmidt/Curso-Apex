@@ -1,13 +1,15 @@
 package DAO;
 
 import DTO.Tabela;
+import UTIL.CRUDUtil;
 import UTIL.Campo;
 import java.util.ArrayList;
+import javax.swing.table.TableModel;
 
 public class ComandosDAO {
 
     private BancoDAO banco = new BancoDAO();
-    
+
     public String apagaRegistro(Tabela tb) {
         String comando = "DELETE FROM " + tb.nomeTabela + " WHERE ";
         ArrayList<Campo> listaCampo = tb.retornaCampos();
@@ -53,7 +55,7 @@ public class ComandosDAO {
             tamanhoLista--;
         }
         valoresTabela += ")";
-        
+
         String comandoFinal = comando + camposTabela + valoresTabela;
         banco.executaComando(comandoFinal);
         return comandoFinal;
@@ -89,23 +91,7 @@ public class ComandosDAO {
         return comandoFinal;
     }
 
-    public String seleciona(Tabela tb) {
-        String comando = "SELECT ";
-        ArrayList<Campo> listaCampo = tb.retornaCampos();
-        String camposTabela = "";
-        int tamanhoLista = listaCampo.size();
-        for (Campo campo : listaCampo) {
-            camposTabela += campo.nomeCampo;
-            if (tamanhoLista != 1) {
-                camposTabela += ", ";
-            }
-            tamanhoLista--;
-        }
-        camposTabela += " FROM " + tb.nomeTabela;
-        
-        String comandoFinal = comando + camposTabela;
-        banco.executaComando(comandoFinal);
-        return comandoFinal;
+    public TableModel retornaRegistroCRUD(Tabela tb) {
+        return CRUDUtil.resultSetToTableModel(banco.retornaDados("SELECT * FROM " + tb.nomeTabela));
     }
-
 }

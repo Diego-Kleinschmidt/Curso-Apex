@@ -27,31 +27,46 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnClientes = new javax.swing.JButton();
+        btnProdutos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mercado");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 204));
-        jButton1.setFont(new java.awt.Font("Sitka Small", 3, 33)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\diekl\\Documents\\Curso Apex\\ProjetoMercado\\src\\main\\java\\imagens\\5172568_add_contact_user_icon.png")); // NOI18N
-        jButton1.setText("Cadastrar  Cliente");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jButton1.setMaximumSize(new java.awt.Dimension(344, 135));
-        jButton1.setMinimumSize(new java.awt.Dimension(344, 135));
+        btnClientes.setBackground(new java.awt.Color(0, 102, 204));
+        btnClientes.setFont(new java.awt.Font("Sitka Small", 3, 33)); // NOI18N
+        btnClientes.setForeground(new java.awt.Color(0, 0, 0));
+        btnClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\diekl\\Documents\\Curso Apex\\ProjetoMercado\\src\\main\\java\\imagens\\5172568_add_contact_user_icon.png")); // NOI18N
+        btnClientes.setText("Cadastrar  Cliente");
+        btnClientes.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnClientes.setMaximumSize(new java.awt.Dimension(344, 135));
+        btnClientes.setMinimumSize(new java.awt.Dimension(344, 135));
+        btnClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnClientesMouseClicked(evt);
+            }
+        });
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(0, 102, 204));
-        jButton2.setFont(new java.awt.Font("Sitka Small", 3, 33)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\diekl\\Documents\\Curso Apex\\ProjetoMercado\\src\\main\\java\\imagens\\52634_box_empty_product_shipment_icon.png")); // NOI18N
-        jButton2.setText("Cadastrar Produtos");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jButton2.setMaximumSize(new java.awt.Dimension(344, 135));
-        jButton2.setMinimumSize(new java.awt.Dimension(344, 135));
+        btnProdutos.setBackground(new java.awt.Color(0, 102, 204));
+        btnProdutos.setFont(new java.awt.Font("Sitka Small", 3, 33)); // NOI18N
+        btnProdutos.setForeground(new java.awt.Color(0, 0, 0));
+        btnProdutos.setIcon(new javax.swing.ImageIcon("C:\\Users\\diekl\\Documents\\Curso Apex\\ProjetoMercado\\src\\main\\java\\imagens\\52634_box_empty_product_shipment_icon.png")); // NOI18N
+        btnProdutos.setText("Cadastrar Produtos");
+        btnProdutos.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnProdutos.setMaximumSize(new java.awt.Dimension(344, 135));
+        btnProdutos.setMinimumSize(new java.awt.Dimension(344, 135));
+        btnProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdutosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -60,17 +75,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE))
+                    .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE))
                 .addGap(56, 56, 56))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(106, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(109, Short.MAX_VALUE))
         );
 
@@ -88,6 +103,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProdutosActionPerformed
+
+    private void btnClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseClicked
+        ClienteView telaCliente = new ClienteView();
+        telaCliente.setVisible(true);
+    }//GEN-LAST:event_btnClientesMouseClicked
+
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+       
+    }//GEN-LAST:event_btnClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,8 +153,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnClientes;
+    private javax.swing.JButton btnProdutos;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
