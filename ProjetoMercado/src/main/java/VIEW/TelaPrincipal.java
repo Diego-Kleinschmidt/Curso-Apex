@@ -27,30 +27,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnClientes = new javax.swing.JButton();
+        btnFuncionario = new javax.swing.JButton();
         btnProdutos = new javax.swing.JButton();
+        btnClientes = new javax.swing.JButton();
+        btnVenda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mercado");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        btnClientes.setBackground(new java.awt.Color(0, 102, 204));
-        btnClientes.setFont(new java.awt.Font("Sitka Small", 3, 33)); // NOI18N
-        btnClientes.setForeground(new java.awt.Color(0, 0, 0));
-        btnClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\diekl\\Documents\\Curso Apex\\ProjetoMercado\\src\\main\\java\\imagens\\5172568_add_contact_user_icon.png")); // NOI18N
-        btnClientes.setText("Cadastrar  Cliente");
-        btnClientes.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnClientes.setMaximumSize(new java.awt.Dimension(344, 135));
-        btnClientes.setMinimumSize(new java.awt.Dimension(344, 135));
-        btnClientes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnClientesMouseClicked(evt);
-            }
-        });
-        btnClientes.addActionListener(new java.awt.event.ActionListener() {
+        btnFuncionario.setBackground(new java.awt.Color(0, 102, 204));
+        btnFuncionario.setFont(new java.awt.Font("Sitka Small", 3, 33)); // NOI18N
+        btnFuncionario.setForeground(new java.awt.Color(0, 0, 0));
+        btnFuncionario.setIcon(new javax.swing.ImageIcon("C:\\Users\\diekl\\Documents\\Curso Apex\\ProjetoMercado\\src\\main\\java\\imagens\\5172568_add_contact_user_icon.png")); // NOI18N
+        btnFuncionario.setText("Cadastrar  Funcionario");
+        btnFuncionario.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnFuncionario.setMaximumSize(new java.awt.Dimension(344, 135));
+        btnFuncionario.setMinimumSize(new java.awt.Dimension(344, 135));
+        btnFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClientesActionPerformed(evt);
+                btnFuncionarioActionPerformed(evt);
             }
         });
 
@@ -68,6 +65,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnClientes.setBackground(new java.awt.Color(0, 102, 204));
+        btnClientes.setFont(new java.awt.Font("Sitka Small", 3, 33)); // NOI18N
+        btnClientes.setForeground(new java.awt.Color(0, 0, 0));
+        btnClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\diekl\\Documents\\Curso Apex\\ProjetoMercado\\src\\main\\java\\imagens\\5172568_add_contact_user_icon.png")); // NOI18N
+        btnClientes.setText("Cadastrar  Cliente");
+        btnClientes.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnClientes.setMaximumSize(new java.awt.Dimension(344, 135));
+        btnClientes.setMinimumSize(new java.awt.Dimension(344, 135));
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesActionPerformed(evt);
+            }
+        });
+
+        btnVenda.setBackground(new java.awt.Color(0, 102, 204));
+        btnVenda.setFont(new java.awt.Font("Sitka Small", 3, 33)); // NOI18N
+        btnVenda.setForeground(new java.awt.Color(0, 0, 0));
+        btnVenda.setText("Venda");
+        btnVenda.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnVenda.setMaximumSize(new java.awt.Dimension(344, 135));
+        btnVenda.setMinimumSize(new java.awt.Dimension(344, 135));
+        btnVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVendaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -75,25 +99,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE))
+                    .addComponent(btnFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 731, Short.MAX_VALUE)
+                    .addComponent(btnProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(56, 56, 56))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
-                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(btnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addGap(68, 68, 68)
+                .addComponent(btnFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,17 +137,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
-        // TODO add your handling code here:
+        ProdutosView telaProdutos = new ProdutosView();
+        telaProdutos.setVisible(true);
     }//GEN-LAST:event_btnProdutosActionPerformed
 
-    private void btnClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseClicked
-        ClienteView telaCliente = new ClienteView();
-        telaCliente.setVisible(true);
-    }//GEN-LAST:event_btnClientesMouseClicked
+    private void btnFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarioActionPerformed
+        FuncionariosView telaFuncionario = new FuncionariosView();
+        telaFuncionario.setVisible(true);
+    }//GEN-LAST:event_btnFuncionarioActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-       
+       ClienteView telaCliente = new ClienteView();
+       telaCliente.setVisible(true);
     }//GEN-LAST:event_btnClientesActionPerformed
+
+    private void btnVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendaActionPerformed
+       VendasView telaVenda = new VendasView();
+       telaVenda.setVisible(true);
+    }//GEN-LAST:event_btnVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,7 +193,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClientes;
+    private javax.swing.JButton btnFuncionario;
     private javax.swing.JButton btnProdutos;
+    private javax.swing.JButton btnVenda;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

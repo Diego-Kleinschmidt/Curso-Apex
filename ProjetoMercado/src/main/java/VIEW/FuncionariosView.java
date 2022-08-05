@@ -1,11 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package VIEW;
 
 import DAO.ComandosDAO;
-import DTO.ClientesDTO;
+import DTO.FuncionariosDTO;
 import java.util.Set;
 import javax.swing.JOptionPane;
 
@@ -13,14 +9,14 @@ import javax.swing.JOptionPane;
  *
  * @author diekl
  */
-public class ClienteView extends javax.swing.JFrame {
+public class FuncionariosView extends javax.swing.JFrame {
 
     private int acao = 0; // 0 visualizando, 1 inserindo, 2 editando
 
     /**
      * Creates new form ClienteView
      */
-    public ClienteView() {
+    public FuncionariosView() {
         initComponents();
     }
 
@@ -37,8 +33,8 @@ public class ClienteView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        textIdCliente = new javax.swing.JTextField();
-        textNomeCliente = new javax.swing.JTextField();
+        textIdFuncionario = new javax.swing.JTextField();
+        textNomeFuncionario = new javax.swing.JTextField();
         textIdade = new javax.swing.JTextField();
         textSituacao = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -72,25 +68,25 @@ public class ClienteView extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Identificador Cliente");
+        jLabel1.setText("Identificador Funcionario");
 
         jLabel2.setFont(new java.awt.Font("Microsoft YaHei", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Nome do Cliente");
+        jLabel2.setText("Nome do Funcionario");
 
         jLabel3.setFont(new java.awt.Font("Microsoft YaHei", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Idade");
 
-        textIdCliente.setEditable(false);
-        textIdCliente.setBackground(new java.awt.Color(204, 255, 255));
-        textIdCliente.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        textIdCliente.setForeground(new java.awt.Color(0, 0, 0));
+        textIdFuncionario.setEditable(false);
+        textIdFuncionario.setBackground(new java.awt.Color(204, 255, 255));
+        textIdFuncionario.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        textIdFuncionario.setForeground(new java.awt.Color(0, 0, 0));
 
-        textNomeCliente.setEditable(false);
-        textNomeCliente.setBackground(new java.awt.Color(204, 255, 255));
-        textNomeCliente.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        textNomeCliente.setForeground(new java.awt.Color(0, 0, 0));
+        textNomeFuncionario.setEditable(false);
+        textNomeFuncionario.setBackground(new java.awt.Color(204, 255, 255));
+        textNomeFuncionario.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        textNomeFuncionario.setForeground(new java.awt.Color(0, 0, 0));
 
         textIdade.setEditable(false);
         textIdade.setBackground(new java.awt.Color(204, 255, 255));
@@ -227,8 +223,8 @@ public class ClienteView extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textIdCliente)
-                            .addComponent(textNomeCliente))
+                            .addComponent(textIdFuncionario)
+                            .addComponent(textNomeFuncionario))
                         .addGap(54, 54, 54)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -270,7 +266,7 @@ public class ClienteView extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textIdFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -283,7 +279,7 @@ public class ClienteView extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addComponent(jLabel4)
                         .addComponent(textSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(textNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -322,15 +318,15 @@ public class ClienteView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        ClientesDTO cli = new ClientesDTO();
+        FuncionariosDTO cli = new FuncionariosDTO();
         ComandosDAO comando = new ComandosDAO();
         cli.setIdade(Integer.parseInt(textIdade.getText()));
-        cli.setNome_cliente(textNomeCliente.getText());
+        cli.setNome_funcionario(textNomeFuncionario.getText());
         cli.setSituacao(textSituacao.getText().charAt(0));
         if (acao == 1) {
             comando.insereRegistro(cli);
         } else {
-            cli.setID_CLIENTE(Integer.parseInt(textIdCliente.getText()));
+            cli.setId_funcionario(Integer.parseInt(textIdFuncionario.getText()));
             comando.atualizaRegistro(cli);
         }
         limpaCampos();
@@ -339,7 +335,7 @@ public class ClienteView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void atualizaRegistros() {
-        ClientesDTO cli = new ClientesDTO();
+        FuncionariosDTO cli = new FuncionariosDTO();
         ComandosDAO DAO = new ComandosDAO();
         tabela.setModel(DAO.retornaRegistroCRUD(cli, ""));
         comboBoxPesquisa.removeAllItems();
@@ -350,14 +346,14 @@ public class ClienteView extends javax.swing.JFrame {
     }
 
     private void limpaCampos() {
-        textNomeCliente.setText("");
+        textNomeFuncionario.setText("");
         textIdade.setText("");
-        textIdCliente.setText("");
+        textIdFuncionario.setText("");
         textSituacao.setText("");
     }
 
     private void modoEdicao(boolean editando) {
-        textNomeCliente.setEditable(editando);
+        textNomeFuncionario.setEditable(editando);
         textIdade.setEditable(editando);
         textSituacao.setEditable(editando);
         btnCancelar.setEnabled(editando);
@@ -392,10 +388,10 @@ public class ClienteView extends javax.swing.JFrame {
 
     private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
         ComandosDAO comando = new ComandosDAO();
-        ClientesDTO cli = new ClientesDTO();
-        int opcao = JOptionPane.showConfirmDialog(this, "Você realmete deseja apagar o cliente : " + textNomeCliente.getText(), "Apagando cliente", 0, 2);
+        FuncionariosDTO cli = new FuncionariosDTO();
+        int opcao = JOptionPane.showConfirmDialog(this, "Você realmete deseja apagar o Funcionario : " + textNomeFuncionario.getText(), "Apagando funcionario", 0, 2);
         if (opcao == 0) {
-            cli.setID_CLIENTE(Integer.parseInt(textIdCliente.getText()));
+            cli.setId_funcionario(Integer.parseInt(textIdFuncionario.getText()));
             comando.apagaRegistro(cli);
         }
         atualizaRegistros();
@@ -404,15 +400,15 @@ public class ClienteView extends javax.swing.JFrame {
 
     private void tabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaMouseClicked
         if (acao == 0) {
-            textIdCliente.setText(tabela.getValueAt(tabela.getSelectedRow(), 0).toString());
-            textNomeCliente.setText(tabela.getValueAt(tabela.getSelectedRow(), 1).toString());
+            textIdFuncionario.setText(tabela.getValueAt(tabela.getSelectedRow(), 0).toString());
+            textNomeFuncionario.setText(tabela.getValueAt(tabela.getSelectedRow(), 1).toString());
             textIdade.setText(tabela.getValueAt(tabela.getSelectedRow(), 2).toString());
             textSituacao.setText(tabela.getValueAt(tabela.getSelectedRow(), 3).toString());
         }
     }//GEN-LAST:event_tabelaMouseClicked
 
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
-        ClientesDTO cli = new ClientesDTO();
+        FuncionariosDTO cli = new FuncionariosDTO();
         ComandosDAO DAO = new ComandosDAO();
         String operacao = " = ";
         String contem = "";
@@ -447,20 +443,21 @@ public class ClienteView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FuncionariosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FuncionariosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FuncionariosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FuncionariosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ClienteView().setVisible(true);
+                new FuncionariosView().setVisible(true);
             }
         });
     }
@@ -483,9 +480,9 @@ public class ClienteView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabela;
-    private javax.swing.JTextField textIdCliente;
+    private javax.swing.JTextField textIdFuncionario;
     private javax.swing.JTextField textIdade;
-    private javax.swing.JTextField textNomeCliente;
+    private javax.swing.JTextField textNomeFuncionario;
     private javax.swing.JTextField textPesquisa;
     private javax.swing.JTextField textSituacao;
     // End of variables declaration//GEN-END:variables

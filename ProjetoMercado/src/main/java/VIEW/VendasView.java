@@ -5,7 +5,11 @@
 package VIEW;
 
 import DAO.ComandosDAO;
+import DAO.ComboBoxDAO;
 import DTO.ClientesDTO;
+import DTO.FuncionariosDTO;
+import DTO.ProdutosDTO;
+import DTO.VendasDTO;
 import java.util.Set;
 import javax.swing.JOptionPane;
 
@@ -13,15 +17,25 @@ import javax.swing.JOptionPane;
  *
  * @author diekl
  */
-public class ClienteView extends javax.swing.JFrame {
+public class VendasView extends javax.swing.JFrame {
 
     private int acao = 0; // 0 visualizando, 1 inserindo, 2 editando
+    private ComboBoxDAO cbDAOcli;
+    private ComboBoxDAO cbDAOpro;
+    private ComboBoxDAO cbDAOfun;
 
     /**
      * Creates new form ClienteView
      */
-    public ClienteView() {
+    public VendasView() {
+        ClientesDTO cli = new ClientesDTO();
+        FuncionariosDTO fun = new FuncionariosDTO();
+        ProdutosDTO pro = new ProdutosDTO();
         initComponents();
+        cbDAOcli = new ComboBoxDAO(comboBoxCliente, cli.getID_CLIENTE(), cli.getNome_cliente(), cli);
+        cbDAOfun = new ComboBoxDAO(comboBoxFuncionario, fun.getId_funcionario(), fun.getNome_funcionario(), fun);
+        cbDAOpro = new ComboBoxDAO(comboBoxProduto, pro.getId_produto(), pro.getDescricao_produto(), pro);
+
     }
 
     /**
@@ -37,10 +51,7 @@ public class ClienteView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        textIdCliente = new javax.swing.JTextField();
-        textNomeCliente = new javax.swing.JTextField();
-        textIdade = new javax.swing.JTextField();
-        textSituacao = new javax.swing.JTextField();
+        textIdVenda = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabela = new javax.swing.JTable(){
@@ -60,6 +71,11 @@ public class ClienteView extends javax.swing.JFrame {
         btnLimpa = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         comboBoxOperacao = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        textQuantidade = new javax.swing.JTextField();
+        comboBoxCliente = new javax.swing.JComboBox<>();
+        comboBoxProduto = new javax.swing.JComboBox<>();
+        comboBoxFuncionario = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -72,37 +88,24 @@ public class ClienteView extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Identificador Cliente");
+        jLabel1.setText("Identificador Venda");
 
         jLabel2.setFont(new java.awt.Font("Microsoft YaHei", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Nome do Cliente");
+        jLabel2.setText("Cliente");
 
         jLabel3.setFont(new java.awt.Font("Microsoft YaHei", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Idade");
+        jLabel3.setText("Funcionario");
 
-        textIdCliente.setEditable(false);
-        textIdCliente.setBackground(new java.awt.Color(204, 255, 255));
-        textIdCliente.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        textIdCliente.setForeground(new java.awt.Color(0, 0, 0));
-
-        textNomeCliente.setEditable(false);
-        textNomeCliente.setBackground(new java.awt.Color(204, 255, 255));
-        textNomeCliente.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        textNomeCliente.setForeground(new java.awt.Color(0, 0, 0));
-
-        textIdade.setEditable(false);
-        textIdade.setBackground(new java.awt.Color(204, 255, 255));
-        textIdade.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        textIdade.setForeground(new java.awt.Color(0, 0, 0));
-
-        textSituacao.setEditable(false);
-        textSituacao.setBackground(new java.awt.Color(204, 255, 255));
+        textIdVenda.setEditable(false);
+        textIdVenda.setBackground(new java.awt.Color(204, 255, 255));
+        textIdVenda.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        textIdVenda.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Situação");
+        jLabel4.setText("Produto");
 
         jScrollPane1.setEnabled(false);
 
@@ -206,6 +209,21 @@ public class ClienteView extends javax.swing.JFrame {
 
         comboBoxOperacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "contem", "igual" }));
 
+        jLabel6.setFont(new java.awt.Font("Microsoft YaHei", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Quantidade");
+
+        textQuantidade.setEditable(false);
+        textQuantidade.setBackground(new java.awt.Color(204, 255, 255));
+        textQuantidade.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        textQuantidade.setForeground(new java.awt.Color(0, 0, 0));
+
+        comboBoxCliente.setEnabled(false);
+
+        comboBoxProduto.setEnabled(false);
+
+        comboBoxFuncionario.setEnabled(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -224,25 +242,10 @@ public class ClienteView extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)))
                         .addGap(17, 17, 17))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textIdCliente)
-                            .addComponent(textNomeCliente))
-                        .addGap(54, 54, 54)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textSituacao)
-                            .addComponent(textIdade))
-                        .addGap(49, 49, 49))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel5)
                         .addGap(12, 12, 12)
-                        .addComponent(comboBoxPesquisa, 0, 111, Short.MAX_VALUE)
+                        .addComponent(comboBoxPesquisa, 0, 135, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(comboBoxOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -252,39 +255,67 @@ public class ClienteView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnLimpa, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(textIdVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel6))
+                                .addGap(73, 73, 73)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(comboBoxCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboBoxProduto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(comboBoxFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(44, 44, 44))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(comboBoxFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textIdade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
+                            .addComponent(textIdVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel4)
-                        .addComponent(textSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(textNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(comboBoxProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(comboBoxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -297,7 +328,7 @@ public class ClienteView extends javax.swing.JFrame {
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNovo)
@@ -321,45 +352,39 @@ public class ClienteView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        ClientesDTO cli = new ClientesDTO();
-        ComandosDAO comando = new ComandosDAO();
-        cli.setIdade(Integer.parseInt(textIdade.getText()));
-        cli.setNome_cliente(textNomeCliente.getText());
-        cli.setSituacao(textSituacao.getText().charAt(0));
-        if (acao == 1) {
-            comando.insereRegistro(cli);
-        } else {
-            cli.setID_CLIENTE(Integer.parseInt(textIdCliente.getText()));
-            comando.atualizaRegistro(cli);
-        }
-        limpaCampos();
-        atualizaRegistros();
-        modoEdicao(false);
-    }//GEN-LAST:event_btnConfirmarActionPerformed
-
     private void atualizaRegistros() {
-        ClientesDTO cli = new ClientesDTO();
-        ComandosDAO DAO = new ComandosDAO();
-        tabela.setModel(DAO.retornaRegistroCRUD(cli, ""));
-        comboBoxPesquisa.removeAllItems();
-        Set<String> apelidos = cli.retornaApelidoCampo().keySet();
-        for (String apelido : apelidos) {
-            comboBoxPesquisa.addItem(apelido);
+        if (acao == 0) {
+            VendasDTO ven = new VendasDTO();
+//        FuncionariosDTO fun = new FuncionariosDTO();
+//        ProdutosDTO pro = new ProdutosDTO();
+//        ClientesDTO cli = new ClientesDTO();
+            ComandosDAO DAO = new ComandosDAO();
+            tabela.setModel(DAO.retornaRegistroCRUD(ven, ""));
+            comboBoxPesquisa.removeAllItems();
+            Set<String> apelidos = ven.retornaApelidoCampo().keySet();
+            cbDAOcli.atualizaDadosComboBox();
+            cbDAOfun.atualizaDadosComboBox();
+            cbDAOpro.atualizaDadosComboBox();
+            for (String apelido : apelidos) {
+                comboBoxPesquisa.addItem(apelido);
+            }
         }
     }
 
     private void limpaCampos() {
-        textNomeCliente.setText("");
-        textIdade.setText("");
-        textIdCliente.setText("");
-        textSituacao.setText("");
+        textIdVenda.setText("");
+        textQuantidade.setText("");
+        comboBoxCliente.setSelectedIndex(-1);
+        comboBoxFuncionario.setSelectedIndex(-1);
+        comboBoxProduto.setSelectedIndex(-1);
+
     }
 
     private void modoEdicao(boolean editando) {
-        textNomeCliente.setEditable(editando);
-        textIdade.setEditable(editando);
-        textSituacao.setEditable(editando);
+        textQuantidade.setEditable(editando);
+        comboBoxCliente.setEnabled(editando);
+        comboBoxFuncionario.setEnabled(editando);
+        comboBoxProduto.setEnabled(editando);
         btnCancelar.setEnabled(editando);
         btnConfirmar.setEnabled(editando);
         btnNovo.setEnabled(!editando);
@@ -374,45 +399,13 @@ public class ClienteView extends javax.swing.JFrame {
         atualizaRegistros();
     }//GEN-LAST:event_formWindowActivated
 
-    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        acao = 1;
+    private void btnLimpaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpaActionPerformed
         limpaCampos();
-        modoEdicao(true);
-    }//GEN-LAST:event_btnNovoActionPerformed
-
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        limpaCampos();
-        modoEdicao(false);
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        modoEdicao(true);
-        acao = 2;
-    }//GEN-LAST:event_btnEditarActionPerformed
-
-    private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
-        ComandosDAO comando = new ComandosDAO();
-        ClientesDTO cli = new ClientesDTO();
-        int opcao = JOptionPane.showConfirmDialog(this, "Você realmete deseja apagar o cliente : " + textNomeCliente.getText(), "Apagando cliente", 0, 2);
-        if (opcao == 0) {
-            cli.setID_CLIENTE(Integer.parseInt(textIdCliente.getText()));
-            comando.apagaRegistro(cli);
-        }
         atualizaRegistros();
-        limpaCampos();
-    }//GEN-LAST:event_btnApagarActionPerformed
-
-    private void tabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaMouseClicked
-        if (acao == 0) {
-            textIdCliente.setText(tabela.getValueAt(tabela.getSelectedRow(), 0).toString());
-            textNomeCliente.setText(tabela.getValueAt(tabela.getSelectedRow(), 1).toString());
-            textIdade.setText(tabela.getValueAt(tabela.getSelectedRow(), 2).toString());
-            textSituacao.setText(tabela.getValueAt(tabela.getSelectedRow(), 3).toString());
-        }
-    }//GEN-LAST:event_tabelaMouseClicked
+    }//GEN-LAST:event_btnLimpaActionPerformed
 
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
-        ClientesDTO cli = new ClientesDTO();
+        VendasDTO cli = new VendasDTO();
         ComandosDAO DAO = new ComandosDAO();
         String operacao = " = ";
         String contem = "";
@@ -425,10 +418,61 @@ public class ClienteView extends javax.swing.JFrame {
         tabela.setModel(DAO.retornaRegistroCRUD(cli, comando));
     }//GEN-LAST:event_btnPesquisaActionPerformed
 
-    private void btnLimpaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpaActionPerformed
-        textPesquisa.setText("");
+    private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
+        ComandosDAO comando = new ComandosDAO();
+        VendasDTO cli = new VendasDTO();
+        int opcao = JOptionPane.showConfirmDialog(this, "Você realmete deseja apagar a venda : " + textIdVenda.getText(), "Apagando cliente", 0, 2);
+        if (opcao == 0) {
+            cli.setId_venda(Integer.parseInt(textIdVenda.getText()));
+            comando.apagaRegistro(cli);
+        }
         atualizaRegistros();
-    }//GEN-LAST:event_btnLimpaActionPerformed
+        limpaCampos();
+    }//GEN-LAST:event_btnApagarActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        modoEdicao(true);
+        acao = 2;
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        acao = 1;
+        limpaCampos();
+        modoEdicao(true);
+    }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        limpaCampos();
+        modoEdicao(false);
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        VendasDTO cli = new VendasDTO();
+        ComandosDAO comando = new ComandosDAO();
+        cli.setFk_funcionario(cbDAOfun.retornaChaveSelecionada());
+        cli.setFk_cliente(cbDAOcli.retornaChaveSelecionada());
+        cli.setFk_produto(cbDAOpro.retornaChaveSelecionada());
+        cli.setQuantidade(Integer.parseInt(textQuantidade.getText()));
+        if (acao == 1) {
+            comando.insereRegistro(cli);
+        } else {
+            cli.setId_venda(Integer.parseInt(textIdVenda.getText()));
+            comando.atualizaRegistro(cli);
+        }
+        limpaCampos();
+        atualizaRegistros();
+        modoEdicao(false);
+    }//GEN-LAST:event_btnConfirmarActionPerformed
+
+    private void tabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaMouseClicked
+        if (acao == 0) {
+            textIdVenda.setText(tabela.getValueAt(tabela.getSelectedRow(), 0).toString());
+            cbDAOcli.posicionaComboBobPelaChave(Integer.parseInt(tabela.getValueAt(tabela.getSelectedRow(), 1).toString()));
+            cbDAOfun.posicionaComboBobPelaChave(Integer.parseInt(tabela.getValueAt(tabela.getSelectedRow(), 2).toString()));
+            cbDAOpro.posicionaComboBobPelaChave(Integer.parseInt(tabela.getValueAt(tabela.getSelectedRow(), 3).toString()));
+            textQuantidade.setText(tabela.getValueAt(tabela.getSelectedRow(), 4).toString());
+        }
+    }//GEN-LAST:event_tabelaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -447,20 +491,21 @@ public class ClienteView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendasView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendasView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendasView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendasView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ClienteView().setVisible(true);
+                new VendasView().setVisible(true);
             }
         });
     }
@@ -473,20 +518,22 @@ public class ClienteView extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpa;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnPesquisa;
+    private javax.swing.JComboBox<String> comboBoxCliente;
+    private javax.swing.JComboBox<String> comboBoxFuncionario;
     private javax.swing.JComboBox<String> comboBoxOperacao;
     private javax.swing.JComboBox<String> comboBoxPesquisa;
+    private javax.swing.JComboBox<String> comboBoxProduto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabela;
-    private javax.swing.JTextField textIdCliente;
-    private javax.swing.JTextField textIdade;
-    private javax.swing.JTextField textNomeCliente;
+    private javax.swing.JTextField textIdVenda;
     private javax.swing.JTextField textPesquisa;
-    private javax.swing.JTextField textSituacao;
+    private javax.swing.JTextField textQuantidade;
     // End of variables declaration//GEN-END:variables
 }

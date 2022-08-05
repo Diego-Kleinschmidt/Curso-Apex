@@ -1,9 +1,14 @@
 package DAO;
 
+import DTO.ClientesDTO;
+import DTO.FuncionariosDTO;
+import DTO.ProdutosDTO;
 import DTO.Tabela;
+import DTO.VendasDTO;
 import UTIL.CRUDUtil;
 import UTIL.Campo;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 
 public class ComandosDAO {
@@ -91,7 +96,33 @@ public class ComandosDAO {
         return comandoFinal;
     }
 
-    public TableModel retornaRegistroCRUD(Tabela tb) {
-        return CRUDUtil.resultSetToTableModel(banco.retornaDados("SELECT * FROM " + tb.nomeTabela));
+    public TableModel retornaRegistroCRUD(Tabela tb, String where) {
+        ArrayList<Campo> listaCampo = tb.retornaCampos();
+        String campos = "";
+        int tamanhoLista = listaCampo.size();
+        for (Campo campo : listaCampo) {
+            campos += campo.nomeCampo + " '" + campo.apelidoCampo + "' ";
+            if (tamanhoLista != 1) {
+                campos += ",";
+            }
+
+            tamanhoLista--;
+        }
+        return CRUDUtil.resultSetToTableModel(banco.retornaDados("SELECT " + campos + " FROM " + tb.nomeTabela + " " + where));
+    }
+
+    public TableModel retornaRegistroCRUDVenda(ClientesDTO cli, FuncionariosDTO fun, ProdutosDTO pro, VendasDTO ven) {
+        String campos = "";
+        campos += ven.getId_venda().nomeCampo + " '" + ven.getId_venda().apelidoCampo + "' " + ", ";
+        campos += cli.getNome_cliente().nomeCampo +  " '" + cli.getNome_cliente().apelidoCampo + "' " + ", ";
+        campos += pro.getDescricao_produto().nomeCampo + " '" + pro.getDescricao_produto().apelidoCampo + "' " + ", ";
+        campos += fun.getNome_funcionario().nomeCampo + " '" + fun.getNome_funcionario().apelidoCampo + "' " + ", ";
+        campos += ven.getQuantidade().nomeCampo + " '" + ven.getQuantidade().apelidoCampo + "' " ;
+       
+        String inner = " INNER JOIN " + cli.nomeTabela + " ON vendas.fk_cliente = clientes.id_cliente ";
+        inner += " INNER JOIN " + pro.nomeTabela + " ON vendas.fk_produto = produtos.id_produto ";
+        inner += " INNER JOIN " + fun.nomeTabela + " ON vendas.fk_funcionario = funcionarios.id_funcionario ";
+        String cf = "SELECT " + campos + " FROM " + ven.nomeTabela + inner;
+        return CRUDUtil.resultSetToTableModel(banco.retornaDados(cf));
     }
 }

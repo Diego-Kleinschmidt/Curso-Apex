@@ -3,6 +3,7 @@ package UTIL;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -34,6 +35,7 @@ public class CRUDUtil {
 
             return new DefaultTableModel(Linhas, NomeDasColunas);
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro tableMode" + e.getMessage());
             e.printStackTrace();
             return null;
         }

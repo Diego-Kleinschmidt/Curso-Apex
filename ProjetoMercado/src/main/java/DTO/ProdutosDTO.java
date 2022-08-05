@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 public class ProdutosDTO extends Tabela {
     
-    private Campo<Integer> id_produto = new Campo<>("id_produto" , true);
-    private Campo<String> descricao_produto = new Campo<>("descricao_produto");
-    private Campo<Float> preco = new Campo<>("preco");
-    private Campo<Character> situacao = new Campo<>("situacao");
+    private Campo<Integer> id_produto = new Campo<>("id_produto" ,"Identificador", true);
+    private Campo<String> descricao_produto = new Campo<>("descricao_produto","Descrição Produto");
+    private Campo<Float> preco = new Campo<>("preco","Preço");
+    private Campo<Character> situacao = new Campo<>("situacao","Situação");
     
     public ProdutosDTO(){
         this.nomeTabela = "produtos";
