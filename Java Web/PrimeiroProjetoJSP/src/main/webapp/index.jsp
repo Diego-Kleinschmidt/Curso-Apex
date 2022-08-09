@@ -16,12 +16,6 @@
 		<br>
 		<br>
 		<input type = "submit">
-		
-		
-		
-		
-	
 	</form>
-	
 </body>
 </html>
