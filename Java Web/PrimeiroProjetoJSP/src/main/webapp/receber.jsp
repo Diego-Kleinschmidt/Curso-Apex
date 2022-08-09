@@ -11,8 +11,6 @@
 		String nome = request.getParameter("nome");
 		int idade = Integer.parseInt(request.getParameter("idade"));
 		out.print("Olá " + nome + " você tem " + idade + " anos! ");
-		
-	
 	%>
 </body>
 </html>
