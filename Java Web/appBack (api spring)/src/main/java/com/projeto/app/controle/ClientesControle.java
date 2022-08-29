@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.app.modelo.ClientesModelo;
@@ -37,21 +38,21 @@ public class ClientesControle {
 		rep.save(cli);
 	}
 	
-	@DeleteMapping(path = "api/cliente/deletar")
-	public void deletar(ClientesModelo cli) {
+	@DeleteMapping(path = "api/clientes/deletar/{codigo}")
+	public void deletar(@PathVariable("codigo") Integer codigo) {
 		try {
-			rep.delete(cli);
+			rep.deleteById(codigo);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
 	
-	@RequestMapping(path = "api/cliente/alterar")
-	public void altera(@RequestBody ClientesModelo cli) {
+	@RequestMapping(path = "api/clientes/alterar", method = RequestMethod.PUT)
+	public void alterar(@RequestBody ClientesModelo cli) {
 		try {
 			rep.save(cli);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
+}
 	}
 }
